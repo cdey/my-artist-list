@@ -3,7 +3,8 @@ import artist from './Artist.js';
 import favorite from './Favorite.js';
 
 const appReducer = combineReducers({
-  artist
+  artist,
+  favorite
 });
 
 const rootReducer = (state, action) => {
