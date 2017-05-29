@@ -12,7 +12,7 @@ const artist = (state = initialState, action) => {
       return {
         ...state,
         searchQuery: action.searchQuery,
-        searchingArtist: true,
+        searchingArtist: true
       }
     case 'SEARCHED_ARTIST':
       return {
