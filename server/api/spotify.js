@@ -3,9 +3,9 @@ const request = Promise.promisify(require('request'));
 
 module.exports = {
   searchArtist: function(artistName) {
-    let artistSearchQuery = artistName.name.split(' ').join('%20');
+    let artistSearchQuery = artistName.searchQuery.split(' ').join('%20');
     return new Promise(function(resolve, reject) {
-      let requestString = `api.spotify.com/v1/search?q=${artist}&type=artist&limit=1`;
+      let requestString = `http://api.spotify.com/v1/search?q=${artistSearchQuery}&type=artist&limit=1`;
       request(requestString, function(error, response) {
         if (error) {
           console.log(error);
@@ -16,7 +16,7 @@ module.exports = {
       });
     }).then(function(artistInfo) {
       return new Promise(function(resolve, reject) {
-        let requestString = `api.spotify.com/v1/artists/{artistInfo.id}/top-tracks?country=US`;
+        let requestString = `http://api.spotify.com/v1/artists/{artistInfo.id}/top-tracks?country=US`;
         request(requestString, function(error, response) {
           if (error) {
             console.log(error);
@@ -28,7 +28,7 @@ module.exports = {
         });
       });
     });
-  };
+  }
 };
 
 let getArtistInfo = apiResult => {

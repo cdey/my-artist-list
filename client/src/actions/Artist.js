@@ -28,7 +28,7 @@ export function searchArtist(searchQuery) {
 
     axios.post('/search', { searchQuery })
     .then(results => {
-      dispatch(searchedArtist(results));
+      dispatch(searchedArtist(results.data));
     })
     .catch(error => {
       dispatch(searchArtistError(error));
