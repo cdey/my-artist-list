@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from './SearchBar.jsx';
 
 export class App extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        Hello World!
+        <SearchBar />
       </div>
     )
   }
