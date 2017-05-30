@@ -13,25 +13,46 @@ export class ArtistPage extends React.Component {
   render() {
     console.log(this.props, "ARTIST INFO")
     return (
-      <div>
-        <div>
-        { this.props.artistInfo['artist_name'] }
+      <div className='container-fluid'>
+
+        <div className='col-md-6 col-md-offset-3'>
+          <SearchBar />
         </div>
-        <div>
-        <img src={ this.props.artistInfo.artist_url } />
+
+        <p></p>
+
+        <div className='container'>
+          <div className ="row">
+            <div className='col-md-6 col-md-offset-3'>
+              <div className ="thumbnail">
+                <img src={ this.props.artistInfo.artist_url } alt="..." className="img-rounded" />
+                <div className ="caption">
+                  <h3>{ this.props.artistInfo['artist_name'] }</h3>
+                  <button onClick={ this.props.addToFavorites }>
+                    Favorite
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <button onClick={ this.props.addToFavorites }>
-          Favorite
-        </button>
-        <TrackList
-          tracks={ this.props.artistInfo.tracks }
-        />
-        <ConcertList
-          concerts={ this.props.artistInfo.concerts }
-        />
-        <div>
-          <Link to='/favorites'>Favorites</Link>
+
+        <div className='container'>
+          <div className="row">
+            <div className="col-md-6">
+              <TrackList
+                tracks={ this.props.artistInfo.tracks }
+              />
+            </div>
+            <div className="col-md-6">
+              <ConcertList
+                concerts={ this.props.artistInfo.concerts }
+              />
+            </div>
+          </div>
         </div>
+
+
       </div>
     )
   }

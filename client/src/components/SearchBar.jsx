@@ -26,16 +26,23 @@ export class SearchBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <input
-          value={ this.state.searchQuery }
-          onChange={ this.handleSearchChange }>
-        </input>
-        <button
-          name="submit"
-          onClick={ this.handleSubmit }>
-        Search
-        </button>
+      <div className='row'>
+        <div className="input-group">
+          <input
+            type="text" className="form-control" placeholder="Search for your favorite artist..."
+            value={ this.state.searchQuery }
+            onChange={ this.handleSearchChange }>
+          </input>
+          <span className="input-group-btn">
+            <button
+              className="btn btn-default"
+              name="submit"
+              onClick={ this.handleSubmit }
+              type="button"
+            >Go!
+            </button>
+          </span>
+        </div>
       </div>
     )
   }

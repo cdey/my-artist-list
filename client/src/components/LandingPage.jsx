@@ -8,7 +8,13 @@ export class LandingPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="cover-container">
+        <h1 className="cover-heading">My Artist List.</h1>
+        <p className="lead">
+          Find your favorite artists.
+          View their tracks.
+          View their upcoming events.
+        </p>
         <SearchBar />
       </div>
     )
