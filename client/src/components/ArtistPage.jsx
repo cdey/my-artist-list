@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import SearchBar from './SearchBar.jsx';
 import TrackList from './TrackList.jsx';
 
@@ -33,4 +34,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtistsPage);
+export default connect(mapStateToProps)(ArtistPage);
