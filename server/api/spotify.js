@@ -33,6 +33,7 @@ module.exports = {
 
 let getArtistInfo = apiResult => {
   let artist = JSON.parse(apiResult).artists;
+  console.log(artist, "ARTIST");
   return {
     spotify_artist_id: artist.id,
     artist_name: artist.name,

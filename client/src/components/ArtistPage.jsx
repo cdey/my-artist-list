@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import SearchBar from './SearchBar.jsx';
 import TrackList from './TrackList.jsx';
+import ConcertList from './ConcertList.jsx';
 
 export class ArtistPage extends React.Component {
   constructor(props) {
@@ -21,6 +22,8 @@ export class ArtistPage extends React.Component {
         </div>
         <TrackList
           trackInfo={ this.props.tracksInfo.tracks }
+        />
+        <ConcertList
         />
       </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import SearchBar from './SearchBar.jsx';
 
 export class FavoritesPage extends React.Component {
@@ -23,4 +24,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FavoritesPage);
+export default connect(mapStateToProps)(FavoritesPage);
