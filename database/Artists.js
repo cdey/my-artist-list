@@ -23,6 +23,18 @@ var artistsSchema = mongoose.Schema({
 //   });
 // };
 
+artistsSchema.statics.fetchFavorites = function() {
+  return new Promise((resolve, reject) => {
+    this.find()
+      .then(function(results) {
+        resolve(results);
+      })
+      .catch(function(error) {
+        reject(error);
+      })
+  });
+};
+
 artistsSchema.statics.findAndUpdate = function(searchQuery, update, callback) {
   let options = {
     new: true,
@@ -30,9 +42,9 @@ artistsSchema.statics.findAndUpdate = function(searchQuery, update, callback) {
   }
   this.findOneAndUpdate(query, update, options, function(error, result) {
     if (error) {
-      console.error(error);
+      callback(error, null);
     } else {
-      callback(result);
+      callback(null, result);
     }
   });
 }

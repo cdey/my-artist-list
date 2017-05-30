@@ -45,7 +45,6 @@ export class App extends React.Component {
             path='/:artistName'
             component={ ArtistPage }
             sendToFavorites={ this.sendToFavorites }
-            sendToHome={ this.sendToHome }
           />
           <Route
             path='/favorites'

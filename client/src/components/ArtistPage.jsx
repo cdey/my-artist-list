@@ -14,7 +14,6 @@ export class ArtistPage extends React.Component {
     console.log(this.props, "ARTIST INFO")
     return (
       <div>
-        <SearchBar />
         <div>
         { this.props.artistInfo['artist_name'] }
         </div>
@@ -30,6 +29,9 @@ export class ArtistPage extends React.Component {
         <ConcertList
           concerts={ this.props.artistInfo.concerts }
         />
+        <div>
+          <Link to='/favorites'>Favorites</Link>
+        </div>
       </div>
     )
   }

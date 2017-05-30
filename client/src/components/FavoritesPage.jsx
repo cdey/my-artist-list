@@ -10,8 +10,12 @@ export class FavoritesPage extends React.Component {
 
   render() {
     return (
-      <div>
-      </div>
+      <ol>
+        <h1>My Artist List</h1>
+        { props.artists.map(artist => {
+          return <li>artist.artistName</li>
+        }) }
+      </ol>
     )
   }
 };
@@ -19,7 +23,7 @@ export class FavoritesPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     ...state,
-    artists: state.props.artists
+    artists: state.artists
   }
 };
 

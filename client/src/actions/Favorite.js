@@ -62,6 +62,7 @@ export function fetchFavorites() {
     axios.get('/favorites')
     .then(results => {
       dispatch(favoritesFetched(results.data));
+      window.location = '/#/favorites';
     })
     .catch(error => {
       dispatch(fetchFavoritesError(error));

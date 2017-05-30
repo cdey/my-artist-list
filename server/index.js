@@ -12,10 +12,12 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
+var mostRecentSearch = null;
+
 app.post('/search', function(req, res) {
   AppService(req)
     .then(data => {
-      console.log(data, "DATAAA");
+      mostRecentSearch = data;
       res.json(data);
     })
     .catch(error => {
@@ -24,11 +26,24 @@ app.post('/search', function(req, res) {
 });
 
 app.get('/favoriteslist', function(req, res) {
-  //db query
+  Artists.fetchFavorites()
+    .then(results => {
+      res.send(results);
+    })
+    .catch(error => {
+      res.send(error);
+    });
 });
 
+
 app.post('/favorite', function(req, res) {
-  // Artists.findAndUpdate(searchQuery, )
+  Artists.findAndUpdate({ artist_name: req.body }, mostRecentSearch, function(results, error) {
+    if (results) {
+      res.JSON(results);
+    } else {
+      res.send(error);
+    }
+  });
 });
 
 var server = app.listen(port, function() {
