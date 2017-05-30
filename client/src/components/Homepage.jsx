@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import SearchBar from './SearchBar.jsx';
 
 export class HomePage extends React.Component {
@@ -10,7 +9,9 @@ export class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar
+          onClick={ this.props.route.sendToArtist }
+        />
       </div>
     )
   }

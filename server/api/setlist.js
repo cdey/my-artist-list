@@ -22,10 +22,10 @@ let getConcertInfo = apiResult => {
   let concerts = JSON.parse(apiResult).setlists.setlist;
   return concerts.map(concert => {
     return {
-      tour_name: concert.tour,
-      event_date: concert.eventDate,
-      venue: concert.venue.name,
-      location: concert.venue.city.name + ',' + concert.venue.city.state
+      tour_name: concert['@tour'],
+      event_date: concert['@eventDate'],
+      venue: concert.venue['@name'],
+      location: concert.venue.city['@name'] + ', ' + concert.venue.city['@state']
     }
   });
 }

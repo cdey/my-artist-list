@@ -40,7 +40,8 @@
     "redux-logger": "^3.0.0",
     "redux-thunk": "^2.2.0",
     "bluebird": "^3.5.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "dotenv": "^4.0.0"
   },
   "babel": {
     "presets": [

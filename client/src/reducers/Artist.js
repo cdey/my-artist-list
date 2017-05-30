@@ -1,6 +1,6 @@
 const initialState = {
   searchQuery: null,
-  tracksInfo: null,
+  artistInfo: null,
   searchingArtist: false,
   searchArtistError: null
 };
@@ -17,7 +17,7 @@ const artist = (state = initialState, action) => {
     case 'SEARCHED_ARTIST':
       return {
         ...state,
-        tracksInfo: action.results
+        artistInfo: action.results
       }
     case 'SEARCH_ARTIST_ERROR':
       return {

@@ -20,6 +20,7 @@ export class App extends React.Component {
   }
 
   sendToArtist(artistName){
+    console.log(artistName, "ANME");
     if (artistName) {
       hashHistory.push('/:artistName');
       return;
@@ -39,7 +40,7 @@ export class App extends React.Component {
           <Route
             path='/'
             component={ HomePage }
-            sendToFavorites={ this.sendToFavorites }
+            sendToArtist={ this.sendToArtist }
           />
           <Route
             path='/:artistName'

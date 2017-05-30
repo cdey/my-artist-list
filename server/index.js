@@ -1,6 +1,8 @@
 const express = require('express');
+const dotenv = require('dotenv').config();
 const path = require('path');
 const bodyParser = require('body-parser');
+const Artists = require('../database/Artists.js');
 const AppService = require('./AppService.js');
 
 const app = express();
@@ -26,13 +28,7 @@ app.get('/favoriteslist', function(req, res) {
 });
 
 app.post('/favorite', function(req, res) {
-  //db query
-    // .then(data => {
-
-    // })
-    // .catch(error => {
-    //   res.send(error);
-    // });
+  // Artists.findAndUpdate(searchQuery, )
 });
 
 var server = app.listen(port, function() {

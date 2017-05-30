@@ -15,16 +15,16 @@ export class ArtistPage extends React.Component {
       <div>
         <SearchBar />
         <div>
-        { this.state.props.tracksInfo.artist_name }
+        { this.state.props.artistInfo.artist_name }
         </div>
         <div>
-        { this.state.props.tracksInfo.artist_url }
+        { this.state.props.artistInfo.artist_url }
         </div>
         <button onClick={ this.props.addToFavorites }>
           Favorite
         </button>
         <TrackList
-          trackInfo={ this.props.tracksInfo.tracks }
+          artistInfo={ this.props.artistInfo.tracks }
         />
         <ConcertList
         />
@@ -36,13 +36,13 @@ export class ArtistPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     ...state,
-    tracksInfo: state.props.trackInfo
+    artistInfo: state.props.artistInfo
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToFavorites: (artistInfo) => { dispatch(favoriteArtist(this.state.props.tracksInfo)) }
+    addToFavorites: (artistInfo) => { dispatch(favoriteArtist(this.state.props.artistInfo)) }
   }
 };
 
