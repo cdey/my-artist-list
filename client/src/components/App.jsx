@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import HomePage from './HomePage.jsx';
 import FavoritesPage from './FavoritesPage.jsx';
 import ArtistPage from './ArtistPage.jsx';
-import SearchBar from './SearchBar.jsx';
 
 export class App extends React.Component {
   constructor(props) {
@@ -38,7 +37,7 @@ export class App extends React.Component {
         <Router history={ hashHistory }>
           <Route
             path='/'
-            component={ SearchBar }
+            component={ HomePage }
             sendToArtist={ this.sendToArtist }
           />
           <Route
