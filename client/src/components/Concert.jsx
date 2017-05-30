@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Concert = (props) => {
+const Concert = ({ concert }) => {
   return (
     <div>
-      { props.tour_name }
-      { props.event_date }
-      { props.venue }
-      { location }
+      { concert.tour_name }
+      { concert.event_date }
+      { concert.venue }
+      { concert.location }
     </div>
   )
 };

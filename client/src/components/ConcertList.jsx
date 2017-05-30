@@ -1,13 +1,13 @@
 import React from 'react';
 import Concert from './Concert.jsx';
 
-const ConcertList = (props) => {
+const ConcertList = ({ concerts }) => {
   return (
     <div>
-      { props.map((concert, index) => {
-        <Concert
+      { concerts.map((concert, index) => {
+        return <Concert
           key={ index }
-          track={ track }
+          concert={ concert }
         />
       }) }
     </div>

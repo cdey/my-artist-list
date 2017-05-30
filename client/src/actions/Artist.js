@@ -28,7 +28,11 @@ export function searchArtist(searchQuery) {
 
     axios.post('/search', { searchQuery })
     .then(results => {
+      const route = results.data['artist_name'].split(' ').join('');
       dispatch(searchedArtist(results.data));
+      if (typeof route === 'string') {
+        window.location = '/#' + route
+      }
     })
     .catch(error => {
       dispatch(searchArtistError(error));

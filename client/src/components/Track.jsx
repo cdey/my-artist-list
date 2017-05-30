@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Track = (props) => {
+const Track = ({ track }) => {
   return (
     <div>
-      { props.track_name }
-      { props.album }
-      { props.track_url }
+      { track.track_name }
+      { track.album }
+      <img src={ track.track_url } />
     </div>
   )
 };

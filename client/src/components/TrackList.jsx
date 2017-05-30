@@ -1,11 +1,11 @@
 import React from 'react';
 import Track from './Track.jsx';
 
-const TrackList = (props) => {
+const TrackList = ({ tracks }) => {
   return (
     <div>
-      { props.map((track, index) => {
-        <Track
+      { tracks.map((track, index) => {
+        return <Track
           key={ index }
           track={ track }
         />

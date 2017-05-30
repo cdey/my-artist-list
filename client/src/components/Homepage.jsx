@@ -9,9 +9,7 @@ export class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar
-          onClick={ this.props.route.sendToArtist }
-        />
+        <SearchBar />
       </div>
     )
   }

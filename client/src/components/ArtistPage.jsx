@@ -11,22 +11,24 @@ export class ArtistPage extends React.Component {
   }
 
   render() {
+    console.log(this.props, "ARTIST INFO")
     return (
       <div>
         <SearchBar />
         <div>
-        { this.state.props.artistInfo.artist_name }
+        { this.props.artistInfo['artist_name'] }
         </div>
         <div>
-        { this.state.props.artistInfo.artist_url }
+        <img src={ this.props.artistInfo.artist_url } />
         </div>
         <button onClick={ this.props.addToFavorites }>
           Favorite
         </button>
         <TrackList
-          artistInfo={ this.props.artistInfo.tracks }
+          tracks={ this.props.artistInfo.tracks }
         />
         <ConcertList
+          concerts={ this.props.artistInfo.concerts }
         />
       </div>
     )
@@ -34,16 +36,17 @@ export class ArtistPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state, "STATE");
   return {
     ...state,
-    artistInfo: state.props.artistInfo
+    artistInfo: state.artist.artistInfo
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToFavorites: (artistInfo) => { dispatch(favoriteArtist(this.state.props.artistInfo)) }
+    addToFavorites: () => { dispatch(favoriteArtist(this.state.props.artistInfo)) }
   }
 };
 
-export default connect(mapStateToProps)(ArtistPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistPage);
