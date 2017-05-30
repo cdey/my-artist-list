@@ -21,6 +21,20 @@ app.post('/search', function(req, res) {
     });
 });
 
+app.get('/favoriteslist', function(req, res) {
+  //db query
+});
+
+app.post('/favorite', function(req, res) {
+  //db query
+    // .then(data => {
+
+    // })
+    // .catch(error => {
+    //   res.send(error);
+    // });
+});
+
 var server = app.listen(port, function() {
   console.log(`Magical unicorns will arrive on port ${port}!`);
 });

@@ -19,6 +19,7 @@ export class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     this.props.submitSearch(this.state.searchQuery);
     this.setState({ searchQuery: '' });
   }
