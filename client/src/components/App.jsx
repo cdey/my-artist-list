@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
-import HomePage from './HomePage.jsx';
+import LandingPage from './LandingPage.jsx';
 import FavoritesPage from './FavoritesPage.jsx';
 import ArtistPage from './ArtistPage.jsx';
 
@@ -37,7 +37,7 @@ export class App extends React.Component {
         <Router history={ hashHistory }>
           <Route
             path='/'
-            component={ HomePage }
+            component={ LandingPage }
             sendToArtist={ this.sendToArtist }
           />
           <Route

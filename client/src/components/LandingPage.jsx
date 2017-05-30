@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar.jsx';
 
-export class HomePage extends React.Component {
+export class LandingPage extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -15,4 +15,4 @@ export class HomePage extends React.Component {
   }
 };
 
-export default HomePage;
+export default LandingPage;
